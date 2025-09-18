@@ -1,7 +1,7 @@
 ---
 mode: 'agent'
 description: 'Install GitHub Copilot Baseline by downloading and installing chatmodes, prompts, and instructions from the AB-Lindex/github-copilot repository for improved AI-assisted development.'
-tools: ['changes', 'codebase', 'editFiles', 'fetch', 'findTestFiles', 'githubRepo', 'new', 'openSimpleBrowser', 'problems', 'runCommands', 'runTasks', 'runTests', 'search', 'searchResults', 'terminalLastCommand', 'terminalSelection', 'testFailure', 'usages', 'vscodeAPI', 'github']
+tools: ['changes', 'codebase', 'editFiles', 'fetch', 'findTestFiles', 'githubRepo', 'new', 'openSimpleBrowser', 'problems', 'runCommands', 'runTasks', 'runTests', 'search', 'searchResults', 'terminalLastCommand', 'terminalSelection', 'testFailure', 'usages', 'vscodeAPI', 'github', 'edit']
 ---
 
 # Install GitHub Copilot Baseline
@@ -17,7 +17,7 @@ Download and install chatmodes, prompts, and instructions from the [AB-Lindex/gi
 5. **Present Options**: Display available files with descriptions, installation status, and benefits
 6. **Validate Structure**: Ensure target directories exist or can be created
 7. **Download Files**: Download selected files from the source repository
-8. **Install Files**: Place files in appropriate directories (`.github/chatmodes/`, `.github/instructions/`, `.github/prompts/`)
+8. **Install Files**: Place files in appropriate directories (`.github/chatmodes/`, `.github/instructions/`, `.github/prompts/`) and use the `edit` tool to create directories and files as needed
 9. **Verify Installation**: Confirm files are properly installed and accessible
 10. **Summary**: Provide installation report with list of installed files and next steps
 
