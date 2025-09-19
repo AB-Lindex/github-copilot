@@ -1,7 +1,7 @@
 ---
 mode: 'agent'
 description: 'Install GitHub Copilot Baseline by downloading and installing chatmodes, prompts, and instructions from the AB-Lindex/github-copilot repository for improved AI-assisted development.'
-tools: ['changes', 'codebase', 'editFiles', 'fetch', 'findTestFiles', 'githubRepo', 'new', 'openSimpleBrowser', 'problems', 'runCommands', 'runTasks', 'runTests', 'search', 'searchResults', 'terminalLastCommand', 'terminalSelection', 'testFailure', 'usages', 'vscodeAPI', 'github', 'edit']
+tools: ['githubRepo', 'editFiles', 'search']
 ---
 
 # Install GitHub Copilot Baseline
@@ -14,12 +14,13 @@ Download and install chatmodes, prompts, and instructions from the [AB-Lindex/gi
 2. **Scan Local Structure**: Discover existing files in `.github/chatmodes/`, `.github/instructions/`, and `.github/prompts/` folders
 3. **Extract Metadata**: Read front matter from local files to get descriptions and configurations
 4. **Analyze Gaps**: Compare available files with what's already installed in the current repository
-5. **Present Options**: Display available files with descriptions, installation status, and benefits
-6. **Validate Structure**: Ensure target directories exist or can be created
-7. **Download Files**: Download selected files from the source repository
-8. **Install Files**: Place files in appropriate directories (`.github/chatmodes/`, `.github/instructions/`, `.github/prompts/`) and use the `edit` tool to create directories and files as needed
-9. **Verify Installation**: Confirm files are properly installed and accessible
-10. **Summary**: Provide installation report with list of installed files and next steps
+5. **Check for Updates**: Compare file content and metadata to detect if newer versions are available in the source repository
+6. **Present Options**: Display available files with descriptions, installation status, update availability, and benefits
+7. **Validate Structure**: Ensure target directories exist or can be created
+8. **Download Files**: Download selected files from the source repository
+9. **Install/Update Files**: Place new files or update existing files in appropriate directories (`.github/chatmodes/`, `.github/instructions/`, `.github/prompts/`) and use the `edit` tool to create directories and files as needed
+10. **Verify Installation**: Confirm files are properly installed and accessible
+11. **Summary**: Provide installation report with list of installed/updated files and next steps
 
 ## Installation Analysis Criteria
 
@@ -55,8 +56,9 @@ Display installation analysis results in structured table showing available file
 1. **Scan Source Repository**: List all files in `.github/chatmodes/`, `.github/instructions/`, and `.github/prompts/` directories from AB-Lindex/github-copilot
 2. **Read File Metadata**: Extract front matter (YAML) from each file to get descriptions and configurations
 3. **Check Local Installation**: Compare with existing files in current repository's `.github/` directory structure
-4. **Build Content Inventory**: Create comprehensive list of available vs. installed content
-5. **Identify Installation Candidates**: Focus on files not yet installed that would benefit the current repository
+4. **Compare Content**: Check file content and metadata to identify updates, version differences, or modifications
+5. **Build Content Inventory**: Create comprehensive list of available vs. installed content with update status
+6. **Identify Installation/Update Candidates**: Focus on files not yet installed or files with available updates that would benefit the current repository
 
 ## Installation Process
 
@@ -68,10 +70,14 @@ Display installation analysis results in structured table showing available file
 
 ## Requirements
 
-- Use `githubRepo` tool to get content from AB-Lindex/github-copilot repository
+- **SCOPE RESTRICTION**: 
+  - **Local files**: Only read and analyze files within the `.github/` folder - do not access any files outside this directory
+  - **Source repository**: Use only the AB-Lindex/github-copilot GitHub repository as the source for content via the `githubRepo` tool
 - Scan local file system for existing files in `.github/chatmodes/`, `.github/instructions/`, and `.github/prompts/` directories
 - Read YAML front matter from files to extract descriptions and metadata
 - Compare available files with installed files to identify installation candidates
+- **Compare file content and metadata** to detect when source repository has newer versions than locally installed files
+- **Offer updates** for files that have been modified or improved in the source repository
 - Create directory structure if it doesn't exist
 - Download and install selected files maintaining proper formatting and structure
 - Provide clear installation status and benefits for each file type
