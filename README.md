@@ -7,11 +7,12 @@ This repository serves as the organizational baseline for GitHub Copilot instruc
 To use the **Install Copilot Baseline** prompt in your VS Code environment:
 
 1. **Create the prompts directory** (if it doesn't exist):
-   - **Windows with VS Code**: `%AppData%\Code\User\prompts\`  
+   - **Windows + VS Code**: `%AppData%\Code\User\prompts\`  
      Open a terminal or the `Run` dialog and run the following command:
       ```powershell
       cmd /c "mkdir %AppData%\Code\User\prompts"
       ```
+   - **Windows + Visual Studio**: chatmodes not supported yet
 
 2. **Download the prompt file**: 
    - Navigate to [`install-copilot-baseline.prompt.md`](https://github.com/AB-Lindex/github-copilot/blob/main/install-copilot-baseline.prompt.md) (right-click and "Open in new tab" recommended)
