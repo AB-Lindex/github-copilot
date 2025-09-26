@@ -4,6 +4,44 @@ This repository serves as the organizational baseline for GitHub Copilot instruc
 
 ## 📥 Installation Instructions
 
+Choose one of the following methods to install the GitHub Copilot Baseline configuration:
+
+### Method 1: Direct Installation (Recommended)
+
+Clone the repository and copy the configuration files directly to your project:
+
+1. **Clone to temporary directory and copy `.github` folder**:
+
+   > 💡 **Note**: If git is not installed on Windows, you can install it with: `winget install Microsoft.Git`
+
+   **Windows (PowerShell)**:
+   ```powershell
+   # Clone to temp directory
+   git clone https://github.com/AB-Lindex/github-copilot.git $env:TEMP\copilot-baseline
+   
+   # Copy .github folder to your project (run from your project root)
+   Copy-Item -Path "$env:TEMP\copilot-baseline\.github" -Destination "." -Recurse -Force
+   
+   # Clean up temp directory
+   Remove-Item -Path "$env:TEMP\copilot-baseline" -Recurse -Force
+   ```
+
+   **macOS/Linux (Bash/Zsh)**:
+   ```bash
+   # Clone to temp directory
+   git clone https://github.com/AB-Lindex/github-copilot.git /tmp/copilot-baseline
+   
+   # Copy .github folder to your project (run from your project root)
+   cp -r /tmp/copilot-baseline/.github .
+   
+   # Clean up temp directory
+   rm -rf /tmp/copilot-baseline
+   ```
+
+2. **Verify installation**: Check that `.github/chatmodes/`, `.github/instructions/`, and `.github/prompts/` directories now exist in your project with the baseline files.
+
+### Method 2: Using Install Prompt
+
 To use the **Install Copilot Baseline** prompt in your VS Code environment:
 
 1. **Create the prompts directory** (if it doesn't exist):
